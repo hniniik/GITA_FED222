@@ -1,44 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>네이버 요약뉴스</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <!-- 1. 상단영역 -->
-        <header>
-            <!-- 1-1.제목 -->
-            <h1>네이버 요약뉴스</h1>
-            <!-- 1-2.메뉴 -->
-            <nav>
-                <a href="index.html">
-                    <img src="images/logo.png" alt="네이버로고" style="width:20px">
-                </a>   
 
-                <a href="sub1.html">정치</a>
-                <a href="sub2.html">경제</a>
-                <a href="sub3.html">사회</a>
-                <a href="sub4.html">IT/과학</a>
-                <a href="sub5.html">TV/연예</a>
-            </nav>
-        </header>
-        <!-- 2. 메인영역 -->
-        <main>
-            <!-- 메인이미지 -->
-            <img src="images/main.jpg" alt="메인이미지"
-            title="요약뉴스 보고싶다!" style="width: 600px;">
-        </main>
-        <!-- 3. 하단영역 -->
-        <footer>
-            <!-- 회사주소 및 정보 -->
-            <address>
-                서울시 강남구 역삼동 119 대호B 8F <br>
-                대표 : Kim haeny <br>
-                Tel : 010-1234-5678
-            </address>
-        </footer>
+<head>
+    <title>네이버 요약뉴스</title>
+    <meta charset="utf-8">
+    <!-- 스타일시트 코딩구역 : 인터널방식 -->
+    <style>
+        /* 스타일시트 사용하는 영역 */
+        /* CSS문법만 쓸 수 있음! *
+        -선택자 :  태그명,/
+        /**************************************** 
+        기본 사용법 : 
+        _________________
+        
+        선택자 {
+            속성명: 값;
+        }
+        _________________
+        
+        - 선택자 : 태그명, 아이디명, 클래스명 등
+        - 속성명 :  각 요소를 구성하는 상세속성들
+        - 값 : 각 속성에서 사용할 수 있는 값들
+        ________________________________________
 
-        <!-- 
+        [ CSS 선택자(selecter) ]
+        1. 타입선택자 : 요소명 (예: h1/a/p/div)
+        2. 자손선택자 : 띄어쓰기 (예: h1 a)
+        3. 아이디선책자 : # (예: #my)
+        4. 클래스선택자 : . (예: .you)
+        5. 종속선택자 : 태그명+아이디/클래스명 (예: header#top)
+            ->종속선택자를 쓰는이유: 
+            1) 이름을 쓴 요소를 밝혀서 코딩함
+            2) 같은이름의 클래스를 다양하게 쓸 때
+            -> h1.ct / div.ct 서로 다르게 코딩함!
+
+         ****************************************/
+        /* 공통클래스 
+        - 같은 디자인을 가지는 
+        요소에 같은 이름을 준다! */
+        
+        /* 중앙배치 클래스 */
+        .ct{
+        /* 가로크기 - width */
+            width: 760px;/* w760 */
+            /* 테두리 - border */
+            border: 1px solid silver;/* bd */
+            /* 안쪽여백(패딩) - padding */
+            padding: 10px;/* p10 */
+            /* 바깥여백(마진) - margin */
+            margin: 0 auto;
+            /* 블록박스 중앙정력 -> 마영오!
+            양쪽 바깥여백을 auto로 주면 양쪽여백을 등분할 하기 때문에 박스가 가운데 위치함 */
+            /* 
+                [ 마진값 설정하기 ]
+                margin: 값; (4방향)
+                margin: 값 값; (위아래 양쪽)
+                margin: 값 값 값; (위 양쪽 아래)
+                margin: 값 값 값 값; (위 오른 아래 왼 -> 시계방향!)
+
+                ->>> padding도 위와 같음!
+
+                개별 설정은
+                margin-top, margin-bottom,
+                margin-left, margin-right
+                
+                ->>> padding도 위와 같음!
+            */
+            /* 블록요소 내부의 넥스트/인라인요소 중앙정렬 */
+            text-align: center;/* tac */
+         }
+
+        /* 1. 상단영역 */
+        header#top{
+            /* 배경색 - background-color */
+            background-color: #0080ff;
+
+            /* 하단마진 : margin-bottom */
+            margin-bottom: 20px;/* mb20 */
+            /* 기존 .ct에 설정된 마진값 보다 우선적용위해 아이디로 설정함! */
+
+            /* 2. 메인영역 */
+            #cont{
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 상단영역 -->
+    <header id="top" class="ct">
+        <!-- 1-1.제목 -->
+        <h1>네이버 요약뉴스</h1>
+        <!-- 1-2.메뉴 -->
+        <nav>
+            <a href="index.html">
+                <img src="images/logo.png" alt="네이버로고" style="width:20px">
+            </a>
+
+            <a href="sub1.html">정치</a>
+            <a href="sub2.html">경제</a>
+            <a href="sub3.html">사회</a>
+            <a href="sub4.html">IT/과학</a>
+            <a href="sub5.html">TV/연예</a>
+        </nav>
+    </header>
+    <!-- 2. 메인영역 -->
+    <main id="cont" class="ct">
+        <!-- 메인이미지 -->
+        <img src="images/main.jpg" alt="메인이미지" title="요약뉴스 보고싶다!" style="width: 600px;">
+    </main>
+    <!-- 3. 하단영역 -->
+    <footer id="info" class="ct">
+        <!-- 회사주소 및 정보 -->
+        <address>
+            서울시 강남구 역삼동 119 대호B 8F <br>
+            대표 : Kim haeny <br>
+            Tel : 010-1234-5678
+        </address>
+    </footer>
+
+    <!-- 
             [html 요소들]
             
             1. div : 컨텐츠 구분박스
@@ -76,7 +158,16 @@
 
             2. title 속성 - 툴팁을 띄워주는 속성
 
+            ____________________________________
 
+            [html 요소 이름 ] 
+            1. id명 : 요소를 구분해주는 유일한 이름
+            2. class명 : 요소를 공동적으로 구분하는 이름 -> 클래스는 한 요소에 여러개 적용가능!
+            (띄어쓰기로 구분함!)
+            예)
+            <h1 id="my" class="rbb coo ytt">하하</h1>
+        
          -->
-    </body>
+</body>
+
 </html>
