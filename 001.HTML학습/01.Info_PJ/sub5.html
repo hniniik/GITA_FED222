@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>네이버 요약뉴스 - TV/연예</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/sub.css">
+    <!-- 
+        link 요소 
+        - 외부 스타일시트 호출(익스터널방식:external)
+        - rel(relavant) 속성은 관련있는 셋팅을 지정하는 속성
+        - href(hyper text reference) 속성은 파일위치 지정
+        - html5 이전버전에서는 type="text/css" 속성을 씀 
+     -->
+</head>
+
+<body>
+    <!-- 1. 상단영역 -->
+    <header id="top" class="ct">
+        <!-- 1-1.제목 -->
+        <h1>네이버 요약뉴스 - TV/연예</h1>
+        <!-- 1-2.메뉴 -->
+        <nav class="gnb">
+            <a href="index.html">
+                <img src="images/logo.png" alt="네이버로고" style="width:20px">
+            </a>
+
+            <a href="sub1.html">정치</a> | 
+            <a href="sub2.html">경제</a> | 
+            <a href="sub3.html">사회</a> | 
+            <a href="sub4.html">IT/과학</a> | 
+            <a href="sub5.html">TV/연예</a>
+        </nav>
+    </header>
+    <!-- 2. 메인영역 -->
+    <main id="cont" class="ct">
+        <!-- 2-1. 언론사로고 -->
+        <div class="prlogo">
+            <a href="http://star.moneytoday.co.kr/" target="_blank">
+            <img src="./images/prlogo5.gif" alt="스타뉴스">
+            </a>
+        </div>
+        <!-- 2-2. 가사제목 -->
+        <h2 class="atit">임영웅, 독보적 행보! 이번에도 제대로 通한 'IM HERO'</h2>
+        <!-- 2-3. 기사사진(+사진설명) -->
+        <figure class="afig">
+            <img src="./images/art5.jpg" alt="TV/연예">
+            <figcaption>가수 임영웅/사진제공=물고기뮤직</figcaption>
+        </figure>
+        <!-- 
+            figure 요소 : 이미지나 표, 그림 등을 넣는 박스 
+            - figcaption 요소 : 이미지설명박스(옵셥)
+            -> 주의 : 박스 하단에 다른태그 사용금지!
+        -->
+
+        <!-- 2-4. 기사내용 -->
+        <section class="atc">
+            <p>가수 임영웅이 여전한 저력을 과시하고 있다.</p>
+
+            <p>지난 2일 오후 6시 각종 음원사이트를 통해 임영웅의 데뷔 첫 정규 앨범 'IM HERO'(아임 히어로)가 공개됐다.</p>
+            
+            <p>타이틀곡은 '다시 만날 수 있을까'로, 이적이 작사와 작곡에 정재일이 스트링 편곡을 맡아 탄생한 임영웅표 명품 감성 발라드다.</p>
+            
+            <p>정규 1집 발매 전부터 대중의 기대를 한몸에 받은 임영웅은 음원 공개와 동시에 음원사이트 음원차트에 전곡을 올렸고, 멜론 실시간 차트 1위 등 상위권에 새 노래들을 줄세우며 변함없는 인기와 관심을 증명해보였다.</p>
+            
+            <p>특히 'IM HERO'에 담긴 12개의 신곡 외에도 꾸준히 사랑받고 있는 '사랑은 늘 도망가'도 실시간 차트 상위권에 자리 잡으며 눈길도 끌고 있다.</p>
+            
+            <p>임영웅은 이번 앨범을 통해 신선한 변신은 물론, 12개의 골라듣는 즐거움이 가득한 곡으로 남자 솔로 가수의 진가도 발휘하고 있다. 유통사인 드림어스컴퍼니에 따르면, 'IM HERO'의 국내외 선주문량을 집계한 결과(2일 기준) 총 100만장을 돌파했다.</p>
+            
+            <p>또한 4일 임영웅의 'IM HERO'는 가온차트 Retail Album Chart(리테일 앨범 차트) 1위를 기록, 무서운 속도로 새 역사도 쓰고 있다.</p>
+            
+            <p>발라드부터 트로트, 댄스, 힙합 등 풍성한 트랙이 담긴 임영웅의 'IM HERO'는 각종 음원사이트에서 감상할 수 있으며, 오는 6일부터는 고양을 시작으로 전국투어 콘서트가 개최된다.</p>
+        </section>
+        <!-- section 요소 : 내용구문박스(div형제) -->
+
+        <!-- 2-5. 기자소개 -->
+        <div class="byrep">이경호 기자 (sky@mtstarnews.com)</div>
+        <!-- 2-6. 원본기사링크 -->
+        <div class="orga">
+            <a href="https://entertain.naver.com/read?oid=108&aid=0003050545" target="_blank">원본기사</a>
+        </div>
+    </main>
+    <!-- 3. 하단영역 -->
+    <footer id="info" class="ct">
+        <!-- 회사주소 및 정보 -->
+        <address>
+            서울시 강남구 역삼동 119 대호B 8F <br>
+            대표 : <span class="fc fd">Haeny Kim</span> <br>
+            Tel : 010-1234-5678
+        </address>
+    </footer>
+
+    <!-- 
+            [html 요소들]
+            
+            1. div : 컨텐츠 구분박스
+            (divide, division)
+            -> 옆에 아무도 못옴 -> 블록요소!
+
+            2. div 의 형제들 소개!
+            -> 레이아웃을 잡을 때 어떤 내용부분인지 
+            알 수 있도록 의미가 있는 블록요소들!(시멘틱요소)
+            1) header - 상단영역
+            2) footer - 하단영역
+            3) main - 메인영역(한 페이지에 한번만 사용)
+            4) nav - 네비게이션 메뉴
+            5) aside - 부수적인 내용
+            6) section - 내용 구분을 위한 영역
+            7) article - 독립적인 내용을 구분하는 영역
+               (보통 article이나 section은 
+               w3c에서 heading(h1~h6)태그를 
+               내용으로 함께 쓸것을 권고하고 있다!)
+
+            3. img 요소 : 이미지를 불러오는 요소
+            - src 속성- 이미지 경로 셋팅
+            (source 줄임말)
+            - alt 속성 - 이미지 설명
+            (alternative text - 대체 텍스트)
+            -> alt는 필수속성으로 웹접근성을 위한 속성
+            (웹접근성은 평등의 원칙으로 누구나 
+            이미지의 설명을 들어볼 수 있게 함 
+            - 스크린리더기에서 이것을 읽어준다!)
+
+            4. address 요소 : 주소나 대표자 전화번호 등을
+                                담는 요소
+                -> 태그명이 "주소"라는 뜻이 있으므로
+                시멘틱!하다! (의미가 있다)
+                Sementic Element
+            
+            5. span 요소 : 인라인요소 범위지정
+                -> span은 '범위'라는 의미의 단어
+                -> 인라인요소로써 다른 아무런 셋팅이 없다!
+
+
+            _____________________________________________________________________
+           
+            [요소 공통 속성 - 어느요소나 쓸 수 있음]
+           
+            1.style 속성 - css 셋팅을 해주는 인라인속성
+            -> 값은 아래와 같이 셋팅함
+            style="속성명:값;속성명:값;"
+            _________________________________
+            :콜론    ;세미콜론 - 잘 구분하자!
+
+            2. title 속성 - 툴팁을 띄워주는 속성
+
+            ____________________________________
+
+            [html 요소 이름 ] 
+            1. id명 : 요소를 구분해주는 유일한 이름
+            2. class명 : 요소를 공동적으로 구분하는 이름 
+            -> 클래스는 한 요소에 여러개 적용가능!
+            (띄어쓰기로 구분함!)
+            예)
+            <h1 id="my" class="rbb coo ytt">하하</h1>
+        
+         -->
+</body>
+
+</html>

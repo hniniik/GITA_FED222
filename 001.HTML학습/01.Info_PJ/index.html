@@ -95,6 +95,22 @@
             text-align: center;
             /* tac */
         }
+        
+        /* 다중클래스 적용연습 */
+
+        /* 글자색, 글자그림자 클래스 */
+        .fc{
+            color: skyblue;
+            text-shadow: 1px 1px 1px #000;
+        }
+
+        /* 글자밑줄 클래스 */
+        .fd{
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            /* 데코레이션 선 스타일- 점선 */
+        }
+
 
 
 
@@ -113,19 +129,23 @@
         /* 1-1. 제목 */
         #top h1 {
             /* 글자색 : color */
-            color: rgb(255, 255, 255);/* c */
+            color: rgb(255, 255, 255);
+            /* c */
             /* 글자그림자 : text-shodow */
-            text-shadow: 2px 2px 2px rgb(11, 66, 137);/* ts */
+            text-shadow: 2px 2px 2px rgb(11, 66, 137);
+            /* ts */
             /* text-shadow: x축 y축 블러 색; */
             
         }
+
         /* 1-2. 메뉴 */
         .gnb a{
             /* 글자색: 기본값 파란색 */
             color: skyblue;
             /* 밑줄변경: text-decoration 
             (기본값 underline) */
-            text-decoration: none;/* tdn */
+            text-decoration: none;
+            /* tdn */
             /* 
                 text-decoration 속성
                 - underline 밑줄
@@ -138,20 +158,23 @@
             /* 
             font-weight 속성
             - blod 두껍게
+            - bolder 더두껍게
             - light 얇게
             - 100~900
             (기본적으로 글자체가 지원해야됨!)
             - normal 두께 없앰
-            - bolder 더두껍게
+        
             */
         }
+
         /* 메뉴a에 마우스 오버시 */
         /* 선택자: hover -> 마우스 오버시 가상클래스 */
         /* a+a는 앞에 a요소가 있는 형제a요소를 선택
         -> 결과적으로 첫번째 a요소만 제외됨! */
         .gnb a+a:hover{
             /* 텍스트 윗줄 */
-            text-decoration: overline;/* tdo */
+            text-decoration: overline;
+            /* tdo */
             /* 글자색 */
             color: rgb(255, 179, 0);
         }
@@ -160,9 +183,10 @@
         /* .gnb>a>img{ -> 직계자식으로는 a생략불가 */
         /* .gnb a img{ -> 자손선택으로는 a생략가능 */
         .gnb img{
-            vertical-align: -4px;/* va */
-            /* vertical-align 속성 */
+            vertical-align: -4px;
+            /* va */
             /* 
+            /* vertical-align 속성
             -> 인라인요소간 진행방향 세로정렬
             -> 값은 정해진값 또는 수치값을 준다
             정해진값: top/middle/bottom/baseline
@@ -177,37 +201,40 @@
         /* 2. 메인영역 */
         main#cont {
             /* 하단마진 */
-            margin-bottom: 20px;/* mb20 */
+            margin-bottom: 20px;
+            /* mb20 */
         }
+
         /* 메인이미지 */
         #cont img{
             width: 100% !important;
-            /* CSS적용 우선순위 */
             /* 
-                inline > id > class > type
+            CSS적용 우선순위
+            inline > id > class > type
+
                 ->!important 를 설정값 뒤에 쓰면 가장 우선함
-                -> 주의사항: !important 를 남발하면 JS구현시 인라인CSS적용이 안되거나
+                -> 주의사항: !important 를 남발하면 
+                JS구현시 인라인CSS적용이 안되거나
                 다른 변경 덮어쓰기가 안될 수 있으므로 사용에 유의한다!
                 
                 -> 일반적으로 우선순위가 밀리는 경우
                 상위부모요소를 선택하여 자손선택자 형식으로
                 선택하면 우선운위가 올라간다!
-            */
-            
+            */ 
         }
         
-
         /* 하단주소 */
         footer#info{
             /* 배경색 */
             background-color: #f0f0f0;
-
         }
+        
         footer#info address{
             /* 안쪽여백 */
             padding: 20px;
             /* 글자 스타일: font style */
-            font-style: normal;/* fsn */
+            font-style: normal;
+            /* fsn */
             /* 
                 font-style 속성
                 - italic 이탤릭체
@@ -219,16 +246,25 @@
             /* 글자색 */
             color: #222;
             /* 글자크기: font-size */
-            font-size: 14px;/* fz14 */
+            font-size: 14px;
+            /* fz14 */
             /* 
               font-size 속성 : 글자크기
                 - 기본크기 16px
                 12pt = 16px (이육사)
             */
             line-height: 1.6;
-
+            /* 
+                line-height : 줄간격
+                - 단위없이 사용하면 글자크기기준 배수
+                - px, em 등 여러가지 단위 사용가능
+            */
         }
-
+        
+        /* 주소의 영문이름만 이탤릭체 */
+        #info span{
+            font-style: italic;
+        }
     </style>
 </head>
 
@@ -260,7 +296,7 @@
         <!-- 회사주소 및 정보 -->
         <address>
             서울시 강남구 역삼동 119 대호B 8F <br>
-            대표 : Kim haeny <br>
+            대표 : <span class="fc fd">Kim haeny</span> <br>
             Tel : 010-1234-5678
         </address>
     </footer>
@@ -295,6 +331,17 @@
             (웹접근성은 평등의 원칙으로 누구나 
             이미지의 설명을 들어볼 수 있게 함 
             - 스크린리더기에서 이것을 읽어준다!)
+
+            4. address 요소 : 주소나 대표자 전화번호 등을
+                                담는 요소
+                -> 태그명이 "주소"라는 뜻이 있으므로
+                시멘틱!하다! (의미가 있다)
+                Sementic Element
+            
+            5. span 요소 : 인라인요소 범위지정
+                -> span은 '범위'라는 의미의 단어
+                -> 인라인요소로써 다른 아무런 셋팅이 없다!
+
 
             _____________________________________________________________________
            
