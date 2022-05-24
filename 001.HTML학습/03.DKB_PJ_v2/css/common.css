@@ -390,26 +390,26 @@ body{
     text-decoration: underline;
 }
 /* 3-2. 브랜드 바로가기 */
+.brand {
+  position: relative;
+  /* 부모자격 */
+}
 .brand select{
-    /* 블록변경 - 마진탑을 마이너스로 올릴때
-    인라인블록이어서 인라인특성상 상단의
-    링크메뉴 글자부분에서 걸리게 됨. 따라서
-    이런제한이 없는 블록박스로 변경함! */
-    display: block;
-    /* 오른쪽 float */
-    float: right;
-    /* 마진탑 - 위로 올리기 */
-    margin-top: -35px;
-    /* 글자색 */
-    color: #222;
-    /* 글자두껍게 */
-    font-weight: bold;
-    /* 글자크기 */
-    font-size: 1.4rem;
-    /* 줄간격 */
-    line-height: 2.8;
-    /* 패딩 */
-    padding: 5px;
+  position: absolute;
+  top: -37px;
+  right: 0;
+  /* 부모는? .brand */
+
+  /* 글자색 */
+  color: #222;
+  /* 글자두껍게 */
+  font-weight: bold;
+  /* 글자크기 */
+  font-size: 1.4rem;
+  /* 줄간격 */
+  line-height: 2.8;
+  /* 패딩 */
+  padding: 0.5rem;
 
     /* 
   앱솔루트 변경 이전 사항 아래 변경 불필요!

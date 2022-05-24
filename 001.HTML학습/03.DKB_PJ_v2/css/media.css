@@ -156,11 +156,11 @@
         height: 100vh;
         background-color: rgb(0 0 0 / 50%);
     }
+
     .gnb ul {
         width: auto;
         margin-top: 20vh;
     }
-    
     
     .gnb > ul > li {
         float: none;

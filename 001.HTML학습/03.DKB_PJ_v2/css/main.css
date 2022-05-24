@@ -215,10 +215,11 @@ body {
 /* 캐릭터 설명 타이틀 */
 .cd h3{
     font-family: 'East Sea Dokdo', cursive;
-    font-size: 3rem;
+    font-size: min(2vw,30px);
+    /* min()으로 2vw와 30px중 작은쪽 적용 */
     font-weight: normal;
     /* 패딩: 위 양쪽 아래 */
-    padding: 0.5rem 1rem 0;
+    padding: .5vw .8vw 0;
 }
 /* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
 .cd h3::before{
@@ -226,22 +227,22 @@ body {
     display: inline-block;
     width: 15px;
     height: 30px;
-    vertical-align: -8px;
+    vertical-align: -6px;
     margin-right: 5px;
     background: url(../images/bg_logo_a_01.png) no-repeat right -184px;
     /* background:색이반고윙/크; */
-    /* outline: 1rem solid red; */
+    /* outline: 1px solid red; */
 }
 /* 캐릭터 설명 문단 */
 .cd p {
     font-family: 'Gowun Batang','ZCOOL QingKe HuangYou', serif;
-    color: #4d4d4d;
-    font-size: 1.25rem;
-    font-weight: bold;
-    line-height: 2.3rem;
+    font-size: min(1.5vw,12.5px);
+    /* min()으로 1.5vw와 12.5px중 작은쪽 적용 */
+    line-height: min(2vw,23px);
+    /* min()으로 2vw와 23px중 작은쪽 적용 */
     /* 줄간격 배수단위로 쓰면 첫글자가 커서 첫둘 간격이
     커지므로 특정px로 설정함! */
-    padding: 1rem;
+    padding: .5vw;
     text-align: justify;
 }
 
@@ -250,7 +251,8 @@ body {
 .cd p:first-of-type::first-letter {
     font-size: 1.9rem;
     color: darksalmon;
-    text-shadow: 1px 0 #000,-1px 0 #000,0 1px #000,0 -1px #000;
+    text-shadow: 1px 0 #000,
+    -1px 0 #000,0 1px #000,0 -1px #000;
 }
 
 /* 도깨비문구 */
