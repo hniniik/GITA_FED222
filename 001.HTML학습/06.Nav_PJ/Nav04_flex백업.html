@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>유형1. 가로네비 서브별 드롭다운 세로형 - flex적용</title>
+    <title>유형4. 세로네비 서브별 드롭다운 세로형 - flex적용</title>
     <style>
       /* 초기화 */
       html,
@@ -27,7 +27,7 @@
       /* GNB메뉴박스 */
       .gnb {
         background-color: #78c2ff;
-      }
+      width: 200px;height: 800px;}
       /* ul 초기화 */
       .gnb ul {
         /* 플렉스박스 */
@@ -35,7 +35,7 @@
         /* 수평방향 중앙정렬 */
         justify-content: center;
         /* 특정가로크기,마영오 등 설정 불필요! */
-      }
+      flex-direction: column;}
       /* 가상요소로 clear설정하기 - flex는 불필요! */
       /* .gnb ul::after {
         content: "";
@@ -46,7 +46,7 @@
       .gnb > ul > li {
         /* 블록요소 옆으로 흐르게 */
         /* float: left; - 사용안함! */
-        height: 50px;
+        /* height: 50px; */
       }
       /* li 하위 a요소 */
       .gnb > ul > li > a {
@@ -73,7 +73,7 @@
 
       /* 서브메뉴 */
       .smenu {
-        position: absolute;
+        /* position: absolute; */
         /* 젠틀앱솔루트 - a요소를 존중하여 아래 위치 */
         width: 200px;
         /* 판타롱스타킹 앱솔루트 
@@ -136,14 +136,14 @@
 
       /* 본문내용 */
       .cont {
-        background-color: #e2ffe4;
+        width: calc(100vw - 200px);background-color: #e2ffe4;
         text-align: center;
         line-height: 50;
       }
     </style>
   </head>
   <body>
-    <h1>유형1. 가로네비 서브별 드롭다운 세로형 - flex적용</h1>
+    <h1>유형. 세로네비 서브별 드롭다운 세로형 - flex적용</h1>
     <!-- GNB 네비게이션 -->
     <nav class="gnb">
       <ul>
@@ -197,5 +197,42 @@
 
     <!-- 내용박스 -->
     <div class="cont">본문내용</div>
-  </body>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
 </html>

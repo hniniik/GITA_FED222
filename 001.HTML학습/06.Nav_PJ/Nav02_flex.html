@@ -12,6 +12,7 @@
         margin: 0;
         padding: 0;
       }
+
       /* ul,ol초기화 */
       ul,
       ol {
@@ -19,14 +20,16 @@
             - 마진0, 패딩0, 리스트스타일없음 */
         list-style: none;
       }
-      h1{
+
+      h1 {
         text-align: center;
       }
 
       /* GNB메뉴박스 */
       .gnb {
-        background-color: #218cff;
+        background-color: #78c2ff;
       }
+
       /* ul 초기화 */
       .gnb ul {
         /* 플렉스박스 */
@@ -35,6 +38,7 @@
         justify-content: center;
         /* 특정가로크기,마영오 등 설정 불필요! */
       }
+
       /* 가상요소로 clear설정하기 - flex는 불필요! */
       /* .gnb ul::after {
         content: "";
@@ -47,6 +51,7 @@
         /* float: left; - 사용안함! */
         height: 50px;
       }
+
       /* li 하위 a요소 */
       .gnb > ul > li > a {
         /* 글자색 */
@@ -64,9 +69,10 @@
         /* 트랜지션: 속시이지 */
         transition: all 0.3s;
       }
+
       /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
       .gnb > ul > li:hover > a {
-        background-color: #c3e3ff;
+        background-color: rgb(210, 235, 255);
         color: #000;
       }
 
@@ -75,19 +81,23 @@
         position: absolute;
         /* 젠틀앱솔루트 - a요소를 존중하여 아래 위치 */
         /* 판타롱스타킹 앱솔루트 */
-        z-index: 1;/* 배경보다 위 */
+        z-index: 1;
+        /* 배경보다위 */
 
         /* 서브메뉴 숨김장치
             -> 높이값0 + 넘치는자식요소 숨기기 
             주의) 위아래방향 패딩 없어야함! */
-        height: 0; /* h0 */
-        overflow: hidden; /* oh */
+        height: 0;
+        /* h0 */
+        overflow: hidden;
+        /* oh */
         /* 배경색 */
-        background-color: #c3e3ff;
+        background-color: rgb(210, 235, 255);
         /* 트랜지션: 속시이지 */
         transition: height 0.4s ease-out;
         /* outline: 2px dotted blue; */
       }
+
       /* 상위메뉴 li에 마우스 오버시
         하위메뉴박스 높이값 복원하기(트랜지션) */
       .gnb > ul > li:hover .smenu {
@@ -96,8 +106,8 @@
 
       /* 상위메뉴 li에 가상요소로 서브 배경바 만들기 */
       /* .sm은 서브메뉴가 있는 li임! */
-      .gnb>ul>li.sm::after{
-        content: '';
+      .gnb > ul > li.sm::after {
+        content: "";
         display: block;
         position: absolute;
         /* top에 대하여 젠틀! */
@@ -106,14 +116,16 @@
         width: 100%;
         /* width %단위의 부모는? 보이는화면 */
         height: 0;
-        background-color: #c3e3ff;
+        background-color: rgb(210, 235, 255);
         /* 트랜지션: 속시이지 */
         transition: height 0.4s ease-out;
       }
+
       /* 상위li에 오버시 서브 배경내려옴 */
-      .gnb>ul>li.sm:hover::after{
+      .gnb > ul > li.sm:hover::after {
         height: 50px;
       }
+
       /* 서브메뉴 ol요소
         - 안쪽 박스에 패딩을 준 이유는?
         .smenu박스는 높이값을 0으로 자식요소
@@ -126,6 +138,7 @@
         /* 안쪽여백 */
         padding: 5px;
       }
+
       /* 서브메뉴 a요소 */
       .smenu a {
         /* 글자색 */
@@ -145,6 +158,7 @@
         /* 트랜지션: 속시이지 */
         transition: 0.3s;
       }
+
       /* 서브메뉴 a에 오버시 */
       .smenu a:hover {
         background-color: #ececec;
@@ -153,12 +167,13 @@
 
       /* 본문내용 */
       .cont {
-        background-color: #fdfccf;
+        background-color: #e2ffe4;
         text-align: center;
         line-height: 50;
       }
     </style>
   </head>
+
   <body>
     <h1>유형2. 가로네비 서브별 드롭다운 가로형 - flex적용</h1>
     <!-- GNB 네비게이션 -->
