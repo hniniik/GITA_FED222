@@ -24,24 +24,28 @@
         text-align: center;
       }
 
-      .wrap {
+      /* GNB와 본문div 랩핑박스 */
+      .wrap{
+        /* 플렉스박스 */
         display: flex;
       }
 
       /* GNB메뉴박스 */
       .gnb {
+        /* 사이드 메뉴 가로크기 지정 */
         width: 200px;
-        height: 800px;
+
         background-color: #78c2ff;
       }
       /* ul 초기화 */
       .gnb ul {
         /* 플렉스박스 */
         display: flex;
+        /* 진행방향 - 세로방향(위->아래) */
+        flex-direction: column;
         /* 수평방향 중앙정렬 */
         justify-content: center;
         /* 특정가로크기,마영오 등 설정 불필요! */
-        flex-direction: column;
       }
       /* 가상요소로 clear설정하기 - flex는 불필요! */
       /* .gnb ul::after {
@@ -49,12 +53,15 @@
         display: block;
         clear: both;
       } */
+
       /* li 리스트요소 */
-      .gnb > ul > li {
+      /* .gnb > ul > li { */
         /* 블록요소 옆으로 흐르게 */
         /* float: left; - 사용안함! */
-        /* height: 50px; */
-      }
+        /* height: 50px; -> li에 높이값이 없어야
+         서브메뉴가 자리를 차지하면서 밀고나감! */
+      /* } */
+      
       /* li 하위 a요소 */
       .gnb > ul > li > a {
         /* 글자색 */
@@ -143,7 +150,12 @@
 
       /* 본문내용 */
       .cont {
-        width: calc(100vw - 200px);
+        width: 100%;
+        /* 일반적인 박스라면 앞의 .gnb박스의 200px이 더해져
+        가로스크롤이 생기지만 flex자식요소는 부모박스의
+        한계크기보다 강제로 크기를 줄여서 조절해 준다!
+        flex-shrink:1 
+        -> 기본설정(부모박스에 맞춰 줄어들래? 1 응, 0 아니) */
         background-color: #e2ffe4;
         text-align: center;
         line-height: 50;

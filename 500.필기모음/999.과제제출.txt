@@ -7,14 +7,12 @@ _______________________________
 [ 업로드 드라이브 주소 ]
 
 폴더명: 
-    001.HTML+CSS 웹개발
-    https://drive.google.com/drive/folders/1Sn9GM43luKmFzeOQMDOLa5KRhR7qq0Mo
 
-    01. 시험지제출
-    https://drive.google.com/drive/folders/1CpYgarTFwCnHDliLa04jBshqi35wQLPb
+[03.화면구현 필기시험지 제출]
+https://drive.google.com/drive/folders/1ciiAaWh_Mhf9j2anJ-VCbI1CydQI-RGU
 
-    02. 실기제출
-    https://drive.google.com/drive/folders/1fgwBqffPj4e1q5baGhEQCGb32dkjP1fy
+[03.화면구현 실기제출]
+https://drive.google.com/drive/folders/1LVgrhT6sfxXj5z_ZqIforOEUntDbFbo7
 
 _______________________________________________
 
@@ -24,12 +22,11 @@ _______________________________________________
 
 [ 실기제출내용 ]
 
-1. 포트폴리오 메인코딩소스
-2. 포트폴리오 가이드문서
+1. 03.화면구현 :  포트폴리오 구현소스
 _______________________________________________
 
-[ HTML+CSS 웹개발 실기제출 시한은? ]
-- 제출기준일 : 5월 20일(금)
+[ 화면구현 실기제출 시한은? ]
+- 제출기준일 : 6월 10일(금)
 _______________________________________________
 
 [ 평가기준은? ]

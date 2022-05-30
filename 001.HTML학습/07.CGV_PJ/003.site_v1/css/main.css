@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CGV PJ 메인 페이지 CSS - main.css */
+
+/* 외부CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+body{
+    background-color: #000;
+}
+
+/* 공사중표시 */
+body *{
+    outline: 1px dotted lime;
+}
+
+/* 공통 클래스 */
+.ibx{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/****************** 1. 상단영역 ******************/
+.top{
+    height: 80px;
+    background: url(../images/curtain.jpg) repeat-x;
+}
+/* 1-1. 페이지 타이틀 */
+h1.tit{
+    font-family: 'Jua', sans-serif;
+    color: aquamarine;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+
+    /* 그림자를 이용한 Glow효과 */
+    text-shadow: 0 0 12px aquamarine;
+
+}
+/****************** 2. 메인영역 ******************/
+.cont{
+    position: relative;
+    /* 부모자격 - #screen, .mlist */
+    height: 788px;
+    background: url(../images/bg.jpg) no-repeat;
+}
+/* 2-1. 스크린박스 */
+#screen{
+    position: absolute;
+    top: 136px;
+    left: 257px;
+    width: 701px;
+    height: 397px;
+    background-color: #000;
+}
+/* 스크린 아이프레임 */
+#screen iframe{
+    width: 100%;
+    height: 100%;
+    /* 아이프레임 기본보더 없앰 */
+    border: none;
+}
+/* 2-2. 예고편 선택메뉴 */
+.mlist{
+    position: absolute;
+    bottom: 58px;
+    left: 50%;
+    /* 부모는? .cont */
+
+    /* x축으로 내크기의 
+    절반왼쪽이동 - x축 정중앙이동 */
+    transform: translateX(-50%);
+    
+    /* .movtxt의 부모에 숨기기적용! */
+    overflow: hidden;
+}
+/* ul 플렉스박스 */
+.mlist ul{
+    display: flex;
+}
+/* 각 li리스트 */
+.mlist ul>li{
+    margin: 0 9px;
+}
+/* 메뉴 포스터 이미지 */
+.mlist img{
+    width: 99px;
+    height: 140px;
+}
+
+/* 영화정보박스 */
+.movtxt{
+    /* 플렉스박스 */
+    display: flex;
+    /* 플랙스 진행방향 세로 */
+    flex-direction: column;
+    /* 진행방향 수평 중앙 */
+    justify-content: center;
+    
+    position: absolute;
+    /* 부모사이즈 만큼 아래로 밀기 */
+    top: 100%;
+    width: 99px;
+    height: 140px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+
+    /* 트랜지션: 속시이지 */
+    transition: top .4s ease-out;
+}
+/* li에 오버시 영화정보 올라오기 */
+.mlist ul>li:hover .movtxt{
+    top: 0;
+}
+
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child{
+    color: aqua;
+    font-size: 17px;
+
+}
+
+/****************** 3. 하단영역 ******************/
+.info{
+    height: 100px;
+}
