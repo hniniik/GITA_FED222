@@ -91,7 +91,7 @@ h1.tit{
     /* 자기크기의 절반 왼쪽이동(가로중앙)
     + 세로방향 위치조정 */
     transform: translate(-50%,5px);
-    
+
     width: 140px;
 
     background: url(../images/bg_smenu.png) no-repeat center/cover;
@@ -152,11 +152,11 @@ h1.tit{
 .smenu a:hover{
     color: red;
 }
-/* 서브메뉴 a에 오버시 가상요소로 이모지 */
-/* 이모지는 윈도우키+세미콜론(;) 단축키 */
+/* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
+/* 이모지는 윈도우키+세미콜론(;) 단축키임 */
 /* "영화" 하위메뉴 이모지 */
 .glist>li:nth-child(1) .smenu li a:hover::after{
-    content: '🎞️';
+    content: '😍';
     /* 인라인요소 오른쪽 끝으로 보냄! */
     float: right;
 }
@@ -168,11 +168,11 @@ h1.tit{
 }
 /* "극장" 하위메뉴 이모지 */
 .glist>li:nth-child(3) .smenu li a:hover::after{
-    content: '🛎️';
+    content: '🔔';
     /* 인라인요소 오른쪽 끝으로 보냄! */
     float: right;
 }
-/* "이벤트&컬쳐" 하위메뉴 이모지 */
+/* "이벤트&컬처" 하위메뉴 이모지 */
 .glist>li:nth-child(4) .smenu li a:hover::after{
     content: '📣';
     /* 인라인요소 오른쪽 끝으로 보냄! */
@@ -234,7 +234,7 @@ h1.tit{
     animation: beamAni .04s linear infinite alternate;
 }
 
-/* 빔 너울너울 거리도록 애니메이션 키프레임 */
+/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
 @keyframes beamAni {
     from{
         opacity: 0.9;
@@ -242,7 +242,7 @@ h1.tit{
     to{
         opacity: 0.5;
     }
-}
+} /* 키프레임 */
 
 /****************** 2. 메인영역 ******************/
 .cont{
@@ -275,20 +275,49 @@ h1.tit{
     left: 50%;
     /* 부모는? .cont */
 
-    /* x축으로 내크기의 
-    절반왼쪽이동 - x축 정중앙이동 */
+    /* X축으로 내크기의 절반왼쪽이동 
+    - x축 정중앙이동 */
     transform: translateX(-50%);
-    
+
     /* .movtxt의 부모에 숨기기적용! */
-    overflow: hidden;
+    /* overflow: hidden; 
+    -> 부모가 하위li로 바뀜! 주석처리! */
 }
 /* ul 플렉스박스 */
 .mlist ul{
     display: flex;
+    /* 원근설정(대상의 부모에 준다!) */
+    perspective: 480px;
 }
 /* 각 li리스트 */
 .mlist ul>li{
+    position: relative;
+    /* 부모자격 */
+    overflow: hidden;
+
     margin: 0 9px;
+    /* x축회전 */
+    transform: rotateX(40deg);
+    /* 회전축 하단변경 */
+    transform-origin: bottom;
+
+    /* 트랜지션: 속시이지 */
+    transition: transform .4s ease-out;
+}
+/* li에 마우스 오버시 li자신 x축회전 일어남! */
+.mlist ul>li:hover{
+    transform: rotateX(0deg);
+    /* 마우스 오버해서 일어난 li가 위에와야
+    옆에 이전 li가 안겹쳐짐! */
+    z-index: 1;
+    /* static이 아니니까 z-index적용됨! */
+    outline: 1px solid aquamarine;
+}
+
+/* 마지막 li겹침 어색한 부분 처리 */
+.mlist ul>li:last-child{
+    z-index: -1;
+    /* 기본상태로 5번째 보다 아래로 처리 */
 }
 
 /* 메뉴 포스터 이미지 */
@@ -300,11 +329,11 @@ h1.tit{
 .movtxt{
     /* 플렉스박스 */
     display: flex;
-    /* 플랙스 진행방향 세로 */
+    /* 플렉스 진행방향 세로 */
     flex-direction: column;
     /* 진행방향 수평 중앙 */
     justify-content: center;
-    
+
     position: absolute;
     /* 부모사이즈 만큼 아래로 밀기 */
     top: 100%;
@@ -322,7 +351,7 @@ h1.tit{
     white-space: nowrap;
 
     /* 트랜지션: 속시이지 */
-    transition: top .4s ease-out;
+    transition: top .3s ease-out;
 }
 /* li에 오버시 영화정보 올라오기 */
 .mlist ul>li:hover .movtxt{
@@ -333,7 +362,7 @@ h1.tit{
 .movtxt li:first-child{
     color: aqua;
     font-size: 17px;
-
+    letter-spacing: -1px;
 }
 
 /****************** 3. 하단영역 ******************/
@@ -345,7 +374,7 @@ h1.tit{
 /* 3-1. 회사정보 */
 #info address{
     color: #c3c3c3;
-    /* address기본 이탤릭테 해제 */
+    /* address기본 이탤릭체 해제 */
     font-style: normal;
     font-family: 'Cute Font', cursive;
     font-size: 18px;
@@ -356,7 +385,7 @@ h1.tit{
 }
 /* 하단로고 이미지 */
 #info img{
-    /* 이미지 자신은 왼쪽
+    /* 이미지 자신은 왼쪽, 
     글자는 오른쪽에 흐르게함 */
     float: left;
     margin-right: 20px;
@@ -367,7 +396,7 @@ ul.sns{
     position: absolute;
     top: 35px;
     right: 20px;
-    /* 플렉스 박스 */
+    /* 플렉스박스 */
     display: flex;
 }
 .sns li{
@@ -378,22 +407,22 @@ ul.sns{
     /* 필터: 흑백적용 */
     filter: grayscale(100%);
 }
-/* 오버시 컬러 */
+/* 오버시 칼라 */
 .sns li:hover{
     filter: grayscale(0%);
 }
 
 /* 페이스북 */
 .sns li:nth-child(1){
-    background-position:-508px -429px;
+    background-position: -508px -429px;
 }
 /* 트위터 */
 .sns li:nth-child(2){
-    background-position:-550px -429px;
+    background-position: -550px -429px;
 }
 /* 인스타그램 */
 .sns li:nth-child(3){
-    background-position:-593px -429px;
+    background-position: -593px -429px;
 }
 
 /* sns a링크 확장 */
