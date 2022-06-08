@@ -77,7 +77,7 @@ html,body{
 /* 크기 2배, 글자색 chartreuse */
 #enter:hover span{
     transform: scale(2);
-    color: chartreuse;
+    color: rgb(139, 255, 234);
 }
 
 /* 엔터박스 로고 이미지 */
