@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded",()=>{
             // classList 의 메서드 add()
             x.classList.add("on");
         } ////////  click ///////////
-        
+
     } /////////// for of ///////////////
 
     /********************************************** 
@@ -46,8 +46,6 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 
 }); /////////////// 로드구역 ///////////////////
-
-
 
 /******************************************** 
     함수명: chgMV

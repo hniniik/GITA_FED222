@@ -379,6 +379,7 @@ h1.tit{
     /* 트랜지션: 속시이지 */
     transition: top .3s ease-out;
 }
+
 /* li에 오버시 영화정보 올라오기 */
 .mlist ul>li:hover .movtxt{
     top: 0;
