@@ -6,11 +6,13 @@
 @import url(core.css);
 
 /* 전체 높이값 채우기 */
-html,body{
+html,
+body{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
+
 /* 비디오요소 */
 #myvid{
     width: 100%;
@@ -73,6 +75,7 @@ html,body{
     transition: all .4s ease-out .2s;
     /* 글자는 지연시간 0.2초 */
 }
+
 /* 엔터박스 오버시 글자박스 변경 */
 /* 크기 2배, 글자색 chartreuse */
 #enter:hover span{
@@ -85,8 +88,21 @@ html,body{
     /* 트랜지션: 속시이지 */
     transition: all .4s ease-out;
 }
+
 /* 엔터박스에 마우스 오버시 로고 이미지 */
 /* 반시계 15도, 1.5배 확대 */
 #enter:hover img{
     transform: rotate(-15deg) scale(1.5);
 }
+
+/* 미디어쿼리 - 600px이하 시작 */
+@media screen and (max-width:600px) {
+
+    /* Click Here 글자박스 */
+    #enter span {
+        font-size: 6vw;
+        white-space: nowrap;
+    }
+}
+
+/* 미디어쿼리 - 600px이하 끝 */
