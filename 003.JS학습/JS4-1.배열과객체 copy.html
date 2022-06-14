@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS4-1. 배열변수와 객체</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        /* 정보출력박스 */
+        body>div {
+            width: 100%;
+            height: 583px;
+            border: 2px solid #000;
+            text-align: center;
+            white-space: nowrap;
+            line-height: 84px;
+            /* margin: 0 5px auto; */
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        /********************************************** 
+            함수명: loadFn
+            기능: 로딩후 실행함수
+        **********************************************/
+        // 상수 const 로 선언하여 익명함수를 할당해서
+        // 함수를 만드는 경우가 아주 많다!!!
+        const loadFn = function () {
+            // 1. 함수호출하기
+            console.log("로딩완료!");
+
+            // 2. 출력대상 : .sbx
+            let sbx = document.querySelectorAll(".sbx");
+            console.log("출력박스", sbx);
+
+            // 3. 내용출력하기 : 배열과 객체를 활용!
+
+
+            // 객체 생성하기
+            const GU = {
+                name:"공유",
+                tall:"184cm",
+                weight:"74kg",
+                com:"매니지먼트 숲",
+                work:"도깨비, 부산행",
+                // function(){} 대신 ()=>{} 화살표함수
+                msg: (txt)=>{ // txt전달변수
+                    
+
+                    // 2. 공유 이미지 배경에 넣기
+                    sbx[0].style.background = 
+                    "url(https://cdn.shopify.com/s/files/1/0292/4072/1468/files/LOUISQUATORZE_PASTELWALLET_NEW1_1400x.jpg) no-repeat";
+
+                    // 5. 높이값 변경
+                    sbx[0].style.height = "583px";
+
+                    // 7. 줄간격
+                    sbx[0].style.lineHeight = "30px";
+
+          
+                } //// mgs 메서드 ////
+            }; ///////// GU 객체 /////////
+
+            // GU객체 출력하기 //////
+            // 출력대상: sbx[0]
+
+            // 줄간격 조정
+            sbx[0].style.lineHeight = "24px";
+
+            // 내용출력
+            sbx[0].innerHTML=`
+                저는 ${GU.name}입니다.
+                몸무게는 비밀인데요, 그래도 말씀드리자면
+                ${GU.weight}입니다. ㅎㅎㅎ <br>
+                제 대표작은 ${GU.work}입니다. <br>
+                제 소속사는 모르시는 분들이 많은데
+                ${GU.com}입니다. 빠이빠이~!
+            `;
+
+            
+            // 공유박스 클릭시 GU객체 메서드 호출하기
+            sbx[0].onclick = () => {
+                GU.msg(
+                   
+                );
+                // \n은 alert창에서 줄바꿈해줌!
+            }; //////// click ////////
+
+        }; ////////////// loadFn 함수 ////////////////
+        /////////////////////////////////////////////
+
+        // 윈도우 컨텐츠 로딩 후 loadFn함수 호출하기
+        // window.addEventListener(이벤트명,함수)
+        window.addEventListener("DOMContentLoaded", loadFn);
+        /**************************************** 
+            [ 로딩관련 이벤트 2가지 ]
+            1. load 이벤트 : 이미지, 동영상 등 모든 
+            컨텐츠가 로딩되고 나면 발생하는 로드이벤트
+            2. DOMContentLoaded 이벤트 : html태그만
+            페이지로 그려지면 바로 발생하는 로드이벤트
+
+        ****************************************/
+        
+    </script>
+</head>
+
+<body>
+    <h1>JS4-1. 배열변수와 객체</h1>
+
+    <div class="sbx"></div>
+    
+
+    <!-- 예고편 동영상용 박스 -->
+    <aside id="mvbx"></aside>
+</body>
+
+</html>
