@@ -29,20 +29,7 @@ ol {
 /**************************************/
 
 
-#container {
-    /*최상위부모*/
-    position: relative;
-    width: 1381px;
-    margin: 0px auto;
-}
-
-#container>header {
-    position: relative;
-    width: 100%;
-    height: 222px;
-}
-
-#container>section {
+.p1 {
     /*슬라이드부모*/
     position: relative;
     width: 913px;
